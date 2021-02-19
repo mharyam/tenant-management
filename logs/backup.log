@@ -1,0 +1,288 @@
+Backup failed for Site tenant.test. Database or site_config.json may be corrupted
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/commands/site.py", line 416, in backup
+    odb = scheduled_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 541, in scheduled_backup
+    odb = new_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 575, in new_backup
+    odb = BackupGenerator(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 85, in __init__
+    self.setup_backup_tables()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 119, in setup_backup_tables
+    existing_doctypes = set([x.name for x in frappe.get_all("DocType")])
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1400, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1373, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(None, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 102, in execute
+    self.columns = self.get_table_columns()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 342, in get_table_columns
+    return get_table_columns(self.doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/meta.py", line 49, in get_table_columns
+    return frappe.db.get_table_columns(doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 893, in get_table_columns
+    columns = self.get_db_table_columns('tab' + doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 881, in get_db_table_columns
+    columns = [r[0] for r in self.sql('''
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 122, in sql
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 75, in connect
+    self._conn = self.get_connection()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 89, in get_connection
+    conn = pymysql.connect(self.host, self.user or '', self.password or '',
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_579d4253d465fcf3'@'localhost' (using password: YES)")
+
+Backup failed for Site tenant2.test. Database or site_config.json may be corrupted
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/commands/site.py", line 416, in backup
+    odb = scheduled_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 541, in scheduled_backup
+    odb = new_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 575, in new_backup
+    odb = BackupGenerator(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 85, in __init__
+    self.setup_backup_tables()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 119, in setup_backup_tables
+    existing_doctypes = set([x.name for x in frappe.get_all("DocType")])
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1400, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1373, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(None, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 102, in execute
+    self.columns = self.get_table_columns()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 342, in get_table_columns
+    return get_table_columns(self.doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/meta.py", line 49, in get_table_columns
+    return frappe.db.get_table_columns(doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 893, in get_table_columns
+    columns = self.get_db_table_columns('tab' + doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 881, in get_db_table_columns
+    columns = [r[0] for r in self.sql('''
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 122, in sql
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 75, in connect
+    self._conn = self.get_connection()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 89, in get_connection
+    conn = pymysql.connect(self.host, self.user or '', self.password or '',
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_579d4253d465fcf3'@'localhost' (using password: YES)")
+
+Backup failed for Site tenant3.test. Database or site_config.json may be corrupted
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/commands/site.py", line 416, in backup
+    odb = scheduled_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 541, in scheduled_backup
+    odb = new_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 575, in new_backup
+    odb = BackupGenerator(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 85, in __init__
+    self.setup_backup_tables()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 119, in setup_backup_tables
+    existing_doctypes = set([x.name for x in frappe.get_all("DocType")])
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1400, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1373, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(None, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 102, in execute
+    self.columns = self.get_table_columns()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 342, in get_table_columns
+    return get_table_columns(self.doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/meta.py", line 49, in get_table_columns
+    return frappe.db.get_table_columns(doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 893, in get_table_columns
+    columns = self.get_db_table_columns('tab' + doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 881, in get_db_table_columns
+    columns = [r[0] for r in self.sql('''
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 122, in sql
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 75, in connect
+    self._conn = self.get_connection()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 89, in get_connection
+    conn = pymysql.connect(self.host, self.user or '', self.password or '',
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_579d4253d465fcf3'@'localhost' (using password: YES)")
+
+Backup failed for Site tenant4.test. Database or site_config.json may be corrupted
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/commands/site.py", line 416, in backup
+    odb = scheduled_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 541, in scheduled_backup
+    odb = new_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 575, in new_backup
+    odb = BackupGenerator(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 85, in __init__
+    self.setup_backup_tables()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 119, in setup_backup_tables
+    existing_doctypes = set([x.name for x in frappe.get_all("DocType")])
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1400, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1373, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(None, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 102, in execute
+    self.columns = self.get_table_columns()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 342, in get_table_columns
+    return get_table_columns(self.doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/meta.py", line 49, in get_table_columns
+    return frappe.db.get_table_columns(doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 893, in get_table_columns
+    columns = self.get_db_table_columns('tab' + doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 881, in get_db_table_columns
+    columns = [r[0] for r in self.sql('''
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 122, in sql
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 75, in connect
+    self._conn = self.get_connection()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 89, in get_connection
+    conn = pymysql.connect(self.host, self.user or '', self.password or '',
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_579d4253d465fcf3'@'localhost' (using password: YES)")
+
+Backup failed for Site tenant5.test. Database or site_config.json may be corrupted
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/commands/site.py", line 416, in backup
+    odb = scheduled_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 541, in scheduled_backup
+    odb = new_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 575, in new_backup
+    odb = BackupGenerator(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 85, in __init__
+    self.setup_backup_tables()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 119, in setup_backup_tables
+    existing_doctypes = set([x.name for x in frappe.get_all("DocType")])
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1400, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1373, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(None, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 102, in execute
+    self.columns = self.get_table_columns()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 342, in get_table_columns
+    return get_table_columns(self.doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/meta.py", line 49, in get_table_columns
+    return frappe.db.get_table_columns(doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 893, in get_table_columns
+    columns = self.get_db_table_columns('tab' + doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 881, in get_db_table_columns
+    columns = [r[0] for r in self.sql('''
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 122, in sql
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 75, in connect
+    self._conn = self.get_connection()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 89, in get_connection
+    conn = pymysql.connect(self.host, self.user or '', self.password or '',
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_579d4253d465fcf3'@'localhost' (using password: YES)")
+
+Backup failed for Site tenant6.test. Database or site_config.json may be corrupted
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/commands/site.py", line 416, in backup
+    odb = scheduled_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 541, in scheduled_backup
+    odb = new_backup(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 575, in new_backup
+    odb = BackupGenerator(
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 85, in __init__
+    self.setup_backup_tables()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/backups.py", line 119, in setup_backup_tables
+    existing_doctypes = set([x.name for x in frappe.get_all("DocType")])
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1400, in get_all
+    return get_list(doctype, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 1373, in get_list
+    return frappe.model.db_query.DatabaseQuery(doctype).execute(None, *args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 102, in execute
+    self.columns = self.get_table_columns()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/db_query.py", line 342, in get_table_columns
+    return get_table_columns(self.doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/meta.py", line 49, in get_table_columns
+    return frappe.db.get_table_columns(doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 893, in get_table_columns
+    columns = self.get_db_table_columns('tab' + doctype)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 881, in get_db_table_columns
+    columns = [r[0] for r in self.sql('''
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 122, in sql
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/database.py", line 75, in connect
+    self._conn = self.get_connection()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/database/mariadb/database.py", line 89, in get_connection
+    conn = pymysql.connect(self.host, self.user or '', self.password or '',
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 325, in __init__
+    self.connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 599, in connect
+    self._request_authentication()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 861, in _request_authentication
+    auth_packet = self._read_packet()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/connections.py", line 684, in _read_packet
+    packet.check_error()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/protocol.py", line 220, in check_error
+    err.raise_mysql_exception(self._data)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/pymysql/err.py", line 109, in raise_mysql_exception
+    raise errorclass(errno, errval)
+pymysql.err.OperationalError: (1045, "Access denied for user '_579d4253d465fcf3'@'localhost' (using password: YES)")
+

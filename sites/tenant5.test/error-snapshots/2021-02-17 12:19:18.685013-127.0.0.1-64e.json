@@ -1,0 +1,519 @@
+{
+ "etype": "AttributeError",
+ "evalue": "AttributeError(\"'NoneType' object has no attribute 'default_sender'\")",
+ "exception": {
+  "args": [
+   40,
+   34,
+   39,
+   78,
+   111,
+   110,
+   101,
+   84,
+   121,
+   112,
+   101,
+   39,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   32,
+   104,
+   97,
+   115,
+   32,
+   110,
+   111,
+   32,
+   97,
+   116,
+   116,
+   114,
+   105,
+   98,
+   117,
+   116,
+   101,
+   32,
+   39,
+   100,
+   101,
+   102,
+   97,
+   117,
+   108,
+   116,
+   95,
+   115,
+   101,
+   110,
+   100,
+   101,
+   114,
+   39,
+   34,
+   44,
+   41
+  ],
+  "with_traceback": [
+   60,
+   98,
+   117,
+   105,
+   108,
+   116,
+   45,
+   105,
+   110,
+   32,
+   109,
+   101,
+   116,
+   104,
+   111,
+   100,
+   32,
+   119,
+   105,
+   116,
+   104,
+   95,
+   116,
+   114,
+   97,
+   99,
+   101,
+   98,
+   97,
+   99,
+   107,
+   32,
+   111,
+   102,
+   32,
+   65,
+   116,
+   116,
+   114,
+   105,
+   98,
+   117,
+   116,
+   101,
+   69,
+   114,
+   114,
+   111,
+   114,
+   32,
+   111,
+   98,
+   106,
+   101,
+   99,
+   116,
+   62
+  ]
+ },
+ "frames": [
+  {
+   "call": "(request=<Request 'http://tenant5.test:8000/' [POST]>)",
+   "dump": {
+    "frappe. handler": "<module 'frappe.handler' from '/home/maryam/Documents/frappe-bench/apps/frappe/frappe/handler.py'>",
+    "frappe.handler. handle": "<function handle>",
+    "global frappe": "<module 'frappe' from '/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "response": "None"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/app.py",
+   "func": "application",
+   "lines": {
+    "62": "",
+    "63": "\t\telif frappe.form_dict.cmd:",
+    "64": "\t\t\tresponse = frappe.handler.handle()",
+    "65": "",
+    "66": "\t\telif request.path.startswith(\"/api/\"):"
+   },
+   "lnum": 64
+  },
+  {
+   "call": "()",
+   "dump": {
+    "cmd": "'frappe.core.doctype.user.user.sign_up'",
+    "data": "None",
+    "global execute_cmd": "<function execute_cmd>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "handle",
+   "lines": {
+    "28": "",
+    "29": "\tif cmd!='login':",
+    "30": "\t\tdata = execute_cmd(cmd)",
+    "31": "",
+    "32": "\t# data can be an empty string or list which are valid responses"
+   },
+   "lnum": 30
+  },
+  {
+   "call": "(cmd='frappe.core.doctype.user.user.sign_up', from_async=False)",
+   "dump": {
+    "frappe. call": "<function call>",
+    "frappe. form_dict": "{'cmd': 'frappe.core.doctype.user.user.sign_up',...l.com', 'redirect_to': '', 'full_name': 'Maryam'}",
+    "global frappe": "<module 'frappe' from '/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "method": "<function sign_up>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/handler.py",
+   "func": "execute_cmd",
+   "lines": {
+    "68": "\tis_valid_http_method(method)",
+    "69": "",
+    "70": "\treturn frappe.call(method, **frappe.form_dict)",
+    "71": "",
+    "72": "def is_valid_http_method(method):"
+   },
+   "lnum": 70
+  },
+  {
+   "call": "(fn=<function sign_up>, *args=(), **kwargs={'cmd': 'frappe.core.doctype.user.user.sign_up', 'email': 'm@gmail.com', 'full_name': 'Maryam', 'redirect_to': ''})",
+   "dump": {
+    "args": "()",
+    "fn": "<function sign_up>",
+    "newargs": "{'email': 'm@gmail.com', 'full_name': 'Maryam', 'redirect_to': ''}"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "call",
+   "lines": {
+    "1134": "\tnewargs = get_newargs(fn, kwargs)",
+    "1135": "",
+    "1136": "\treturn fn(*args, **newargs)",
+    "1137": "",
+    "1138": "def get_newargs(fn, kwargs):"
+   },
+   "lnum": 1136
+  },
+  {
+   "call": "(email='m@gmail.com', full_name='Maryam', redirect_to='')",
+   "dump": {
+    "user": "<frappe.core.doctype.user.user.User object>",
+    "user. insert": "<bound method Document.insert of <frappe.core.doctype.user.user.User object>>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py",
+   "func": "sign_up",
+   "lines": {
+    "801": "\t\tuser.flags.ignore_permissions = True",
+    "802": "\t\tuser.flags.ignore_password_policy = True",
+    "803": "\t\tuser.insert()",
+    "804": "",
+    "805": "\t\t# set default signup role as per Portal Settings"
+   },
+   "lnum": 803
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>, ignore_permissions=None, ignore_links=None, ignore_if_duplicate=False, ignore_mandatory=None, set_name=None, set_child_names=True)",
+   "dump": {
+    "self": "<frappe.core.doctype.user.user.User object>",
+    "self. run_post_save_methods": "<bound method Document.run_post_save_methods of <frappe.core.doctype.user.user.User object>>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "insert",
+   "lines": {
+    "266": "\t\t# during document creation",
+    "267": "\t\tself.flags.update_log_for_doc_creation = True",
+    "268": "\t\tself.run_post_save_methods()",
+    "269": "\t\tself.flags.in_insert = False",
+    "270": ""
+   },
+   "lnum": 268
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>)",
+   "dump": {
+    "self": "<frappe.core.doctype.user.user.User object>",
+    "self. run_method": "<bound method Document.run_method of <frappe.core.doctype.user.user.User object>>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "run_post_save_methods",
+   "lines": {
+    "981": "",
+    "982": "\t\tif self._action==\"save\":",
+    "983": "\t\t\tself.run_method(\"on_update\")",
+    "984": "\t\telif self._action==\"submit\":",
+    "985": "\t\t\tself.run_method(\"on_update\")"
+   },
+   "lnum": 983
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>, method='on_update', *args=(), **kwargs={})",
+   "dump": {
+    "Document. hook": "<function Document.hook>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.<lambda>>",
+    "global Document": "<class 'frappe.model.document.Document'>",
+    "kwargs": "{}",
+    "out": "undefined",
+    "self": "<frappe.core.doctype.user.user.User object>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "run_method",
+   "lines": {
+    "846": "",
+    "847": "\t\tfn.__name__ = str(method)",
+    "848": "\t\tout = Document.hook(fn)(self, *args, **kwargs)",
+    "849": "",
+    "850": "\t\tself.run_notifications(method)"
+   },
+   "lnum": 848
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "composed": "<function Document.hook.<locals>.compose.<locals>.runner>",
+    "kwargs": "{}",
+    "method": "'on_update'",
+    "self": "<frappe.core.doctype.user.user.User object>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "composer",
+   "lines": {
+    "1133": "",
+    "1134": "\t\t\tcomposed = compose(f, *hooks)",
+    "1135": "\t\t\treturn composed(self, method, *args, **kwargs)",
+    "1136": "",
+    "1137": "\t\treturn composer"
+   },
+   "lnum": 1135
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>, method='on_update', *args=(), **kwargs={})",
+   "dump": {
+    "add_to_return_value": "<function Document.hook.<locals>.add_to_return_value>",
+    "args": "()",
+    "fn": "<function Document.run_method.<locals>.<lambda>>",
+    "kwargs": "{}",
+    "self": "<frappe.core.doctype.user.user.User object>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "runner",
+   "lines": {
+    "1116": "\t\tdef compose(fn, *hooks):",
+    "1117": "\t\t\tdef runner(self, method, *args, **kwargs):",
+    "1118": "\t\t\t\tadd_to_return_value(self, fn(self, *args, **kwargs))",
+    "1119": "\t\t\t\tfor f in hooks:",
+    "1120": "\t\t\t\t\tadd_to_return_value(self, f(self, method, *args, **kwargs))"
+   },
+   "lnum": 1118
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>, *args=(), **kwargs={})",
+   "dump": {
+    "args": "()",
+    "builtin getattr": "<built-in function getattr>",
+    "fn": "undefined",
+    "kwargs": "{}",
+    "method": "'on_update'",
+    "self": "<frappe.core.doctype.user.user.User object>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py",
+   "func": "<lambda>",
+   "lines": {
+    "840": "",
+    "841": "\t\tif hasattr(self, method) and hasattr(getattr(self, method), \"__call__\"):",
+    "842": "\t\t\tfn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)",
+    "843": "\t\telse:",
+    "844": "\t\t\t# hack! to run hooks even if method does not exist"
+   },
+   "lnum": 842
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>)",
+   "dump": {
+    "self": "<frappe.core.doctype.user.user.User object>",
+    "self. send_password_notification": "<bound method User.send_password_notification of <frappe.core.doctype.user.user.User object>>",
+    "self.__new_password": "undefined"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py",
+   "func": "on_update",
+   "lines": {
+    "110": "\t\tfrappe.clear_cache(user=self.name)",
+    "111": "\t\tnow=frappe.flags.in_test or frappe.flags.in_install",
+    "112": "\t\tself.send_password_notification(self.__new_password)",
+    "113": "\t\tfrappe.enqueue(",
+    "114": "\t\t\t'frappe.core.doctype.user.user.create_contact',"
+   },
+   "lnum": 112
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>, new_password='M0YiXasaBt')",
+   "dump": {
+    "self": "<frappe.core.doctype.user.user.User object>",
+    "self. send_welcome_mail_to_user": "<bound method User.send_welcome_mail_to_user of <frappe.core.doctype.user.user.User object>>"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py",
+   "func": "send_password_notification",
+   "lines": {
+    "220": "",
+    "221": "\t\t\t\t\tif not self.flags.no_welcome_mail and cint(self.send_welcome_email):",
+    "222": "\t\t\t\t\t\tself.send_welcome_mail_to_user()",
+    "223": "\t\t\t\t\t\tself.flags.email_sent = 1",
+    "224": "\t\t\t\t\t\tif frappe.session.user != 'Guest':"
+   },
+   "lnum": 222
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>)",
+   "dump": {
+    "builtin dict": "<class 'dict'>",
+    "get_url": "<function get_url>",
+    "link": "'http://tenant5.test:8000/update-password?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72'",
+    "self": "<frappe.core.doctype.user.user.User object>",
+    "self. send_login_mail": "<bound method User.send_login_mail of <frappe.core.doctype.user.user.User object>>",
+    "site_url": "undefined",
+    "subject": "'Complete Registration'"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py",
+   "func": "send_welcome_mail_to_user",
+   "lines": {
+    "289": "\t\t\t\tsubject = _(\"Complete Registration\")",
+    "290": "",
+    "291": "\t\tself.send_login_mail(subject, \"new_user\",",
+    "292": "\t\t\t\tdict(",
+    "293": "\t\t\t\t\tlink=link,"
+   },
+   "lnum": 291
+  },
+  {
+   "call": "(self=<frappe.core.doctype.user.user.User object>, subject='Complete Registration', template='new_user', add_args={'link': 'http://tenant5.test:8000/update-password?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72', 'site_url': 'http://tenant5.test:8000'}, now=None)",
+   "dump": {
+    "args": "{'created_by': 'Administrator', 'first_name': 'Maryam', 'link': 'http://tenant5.test:8000/update-password?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72', 'login_url': 'http://tenant5.test:8000', 'site_url': 'http://tenant5.test:8000', 'title': 'Complete Registration', 'user': 'm@gmail.com'}",
+    "delayed": "undefined",
+    "frappe. sendmail": "<function sendmail>",
+    "global frappe": "<module 'frappe' from '/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py'>",
+    "header": "undefined",
+    "now": "None",
+    "recipients": "undefined",
+    "retry": "undefined",
+    "self": "<frappe.core.doctype.user.user.User object>",
+    "self. email": "'m@gmail.com'",
+    "self. flags": "{'ignore_save_passwords': ['new_password'], 'ign..._set': True, 'update_log_for_doc_creation': True}",
+    "self.flags. delay_emails": "None",
+    "sender": "None",
+    "subject": "'Complete Registration'",
+    "template": "'new_user'"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py",
+   "func": "send_login_mail",
+   "lines": {
+    "316": "\t\tsender = frappe.session.user not in STANDARD_USERS and get_formatted_email(frappe.session.user) or None",
+    "317": "",
+    "318": "\t\tfrappe.sendmail(recipients=self.email, sender=sender, subject=subject,",
+    "319": "\t\t\ttemplate=template, args=args, header=[subject, \"green\"],",
+    "320": "\t\t\tdelayed=(not now) if now!=None else self.flags.delay_emails, retry=3)"
+   },
+   "lnum": 318
+  },
+  {
+   "call": "(recipients='m@gmail.com', sender=None, subject='Complete Registration', message='<p>\\n\\tHello Maryam,\\n</p>\\n\\n<p>A new account has be...ord?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72</a>\\n</p>', as_markdown=False, delayed=None, reference_doctype=None, reference_name=None, unsubscribe_method=None, unsubscribe_params=None, unsubscribe_message=None, attachments=None, content=None, doctype=None, name=None, reply_to=None, cc=[], bcc=[], message_id=None, in_reply_to=None, send_after=None, expose_recipients=None, send_priority=1, communication=None, retry=3, now=True, read_receipt=None, is_notification=False, inline_images=None, template='new_user', args={'created_by': 'Administrator', 'first_name': 'Maryam', 'link': 'http://tenant5.test:8000/update-password?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72', 'login_url': 'http://tenant5.test:8000', 'site_url': 'http://tenant5.test:8000', 'title': 'Complete Registration', 'user': 'm@gmail.com'}, header=['Complete Registration', 'green'], print_letterhead=False, with_container=False)",
+   "dump": {
+    "attachments": "None",
+    "bcc": "[]",
+    "cc": "[]",
+    "communication": "None",
+    "doctype": "None",
+    "expose_recipients": "None",
+    "header": "['Complete Registration', 'green']",
+    "in_reply_to": "None",
+    "inline_images": "None",
+    "is_notification": "False",
+    "message": "'<p>\\n\\tHello Maryam,\\n</p>\\n\\n<p>A new account has be...ord?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72</a>\\n</p>'",
+    "message_id": "None",
+    "name": "None",
+    "now": "True",
+    "print_letterhead": "False",
+    "queue": "<module 'frappe.email.queue' from '/home/maryam/.../frappe-bench/apps/frappe/frappe/email/queue.py'>",
+    "queue. send": "<function send>",
+    "read_receipt": "None",
+    "recipients": "'m@gmail.com'",
+    "reference_doctype": "None",
+    "reference_name": "None",
+    "reply_to": "None",
+    "send_after": "None",
+    "send_priority": "1",
+    "sender": "None",
+    "subject": "'Complete Registration'",
+    "text_content": "None",
+    "unsubscribe_message": "None",
+    "unsubscribe_method": "None",
+    "unsubscribe_params": "None",
+    "with_container": "False"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py",
+   "func": "sendmail",
+   "lines": {
+    "515": "",
+    "516": "\tfrom frappe.email import queue",
+    "517": "\tqueue.send(recipients=recipients, sender=sender,",
+    "518": "\t\tsubject=subject, message=message, text_content=text_content,",
+    "519": "\t\treference_doctype = doctype or reference_doctype, reference_name = name or reference_name,"
+   },
+   "lnum": 517
+  },
+  {
+   "call": "(recipients=['m@gmail.com'], sender=None, subject='Complete Registration', message='<p>\\n\\tHello Maryam,\\n</p>\\n\\n<p>A new account has be...ord?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72</a>\\n</p>', text_content=None, reference_doctype=None, reference_name=None, unsubscribe_method='/api/method/frappe.email.queue.unsubscribe', unsubscribe_params=None, unsubscribe_message=None, attachments=None, reply_to=None, cc=[], bcc=[], message_id=None, in_reply_to=None, send_after=None, expose_recipients=None, send_priority=1, communication=None, now=True, read_receipt=None, queue_separately=False, is_notification=False, add_unsubscribe_link=1, inline_images=None, header=['Complete Registration', 'green'], print_letterhead=False, with_container=False)",
+   "dump": {
+    "email_account": "None",
+    "email_account.default_sender": "undefined",
+    "sender": "None"
+   },
+   "file": "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/email/queue.py",
+   "func": "send",
+   "lines": {
+    "76": "\temail_account = get_outgoing_email_account(True, append_to=reference_doctype, sender=sender)",
+    "77": "\tif not sender or sender == \"Administrator\":",
+    "78": "\t\tsender = email_account.default_sender",
+    "79": "",
+    "80": "\tif not text_content:"
+   },
+   "lnum": 78
+  }
+ ],
+ "locals": {
+  "add_unsubscribe_link": "1",
+  "attachments": "None",
+  "bcc": "[]",
+  "cc": "[]",
+  "communication": "None",
+  "email_account": "None",
+  "expose_recipients": "None",
+  "header": "['Complete Registration', 'green']",
+  "in_reply_to": "None",
+  "inline_images": "None",
+  "is_notification": "False",
+  "message": "<p>\n\tHello Maryam,\n</p>\n\n<p>A new account has been created for you at <a href='http://tenant5.test:8000'>http://tenant5.test:8000</a>.</p>\n<p>Your login id is: <b>m@gmail.com</b>\n<p>Click on the link below to complete your registration and set a new password.</p>\n\n<p style=\"margin: 15px 0px;\">\n\t<a href=\"http://tenant5.test:8000/update-password?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72\" rel=\"nofollow\" class=\"btn btn-primary\">Complete Registration</a>\n</p>\n\n\n<br>\n<p>\n\tYou can also copy-paste following link in your browser<br>\n\t<a href=\"http://tenant5.test:8000/update-password?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72\">http://tenant5.test:8000/update-password?key=JzIbuUoK6L6r3AhFqz5HJNw2RBfgBg72</a>\n</p>",
+  "message_id": "None",
+  "now": "True",
+  "print_letterhead": "False",
+  "queue_separately": "False",
+  "read_receipt": "None",
+  "recipients": "['m@gmail.com']",
+  "reference_doctype": "None",
+  "reference_name": "None",
+  "reply_to": "None",
+  "send_after": "None",
+  "send_priority": "1",
+  "sender": "None",
+  "subject": "Complete Registration",
+  "text_content": "None",
+  "unsubscribe_message": "None",
+  "unsubscribe_method": "/api/method/frappe.email.queue.unsubscribe",
+  "unsubscribe_params": "None",
+  "with_container": "False"
+ },
+ "pyver": "Python 3.8.5: /home/maryam/Documents/frappe-bench/env/bin/python (prefix: /home/maryam/Documents/frappe-bench/env)",
+ "timestamp": "2021-02-17 12:19:18.685113",
+ "traceback": "Traceback (most recent call last):\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/app.py\", line 64, in application\n    response = frappe.handler.handle()\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/handler.py\", line 30, in handle\n    data = execute_cmd(cmd)\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/handler.py\", line 70, in execute_cmd\n    return frappe.call(method, **frappe.form_dict)\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py\", line 1136, in call\n    return fn(*args, **newargs)\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py\", line 803, in sign_up\n    user.insert()\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py\", line 268, in insert\n    self.run_post_save_methods()\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py\", line 983, in run_post_save_methods\n    self.run_method(\"on_update\")\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py\", line 848, in run_method\n    out = Document.hook(fn)(self, *args, **kwargs)\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py\", line 1135, in composer\n    return composed(self, method, *args, **kwargs)\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py\", line 1118, in runner\n    add_to_return_value(self, fn(self, *args, **kwargs))\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py\", line 842, in <lambda>\n    fn = lambda self, *args, **kwargs: getattr(self, method)(*args, **kwargs)\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py\", line 112, in on_update\n    self.send_password_notification(self.__new_password)\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py\", line 222, in send_password_notification\n    self.send_welcome_mail_to_user()\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py\", line 291, in send_welcome_mail_to_user\n    self.send_login_mail(subject, \"new_user\",\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py\", line 318, in send_login_mail\n    frappe.sendmail(recipients=self.email, sender=sender, subject=subject,\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py\", line 517, in sendmail\n    queue.send(recipients=recipients, sender=sender,\n  File \"/home/maryam/Documents/frappe-bench/apps/frappe/frappe/email/queue.py\", line 78, in send\n    sender = email_account.default_sender\nAttributeError: 'NoneType' object has no attribute 'default_sender'\n"
+}

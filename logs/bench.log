@@ -1,0 +1,58 @@
+2021-02-17 11:52:48,852 DEBUG cd frappe-bench && /home/maryam/.local/bin/virtualenv -q env -p python3
+2021-02-17 11:52:50,375 LOG Getting app frappe
+2021-02-17 11:52:50,376 DEBUG cd frappe-bench/apps && git clone https://github.com/frappe/frappe.git  --depth 1 --origin upstream
+2021-02-17 11:53:58,219 LOG installing frappe
+2021-02-17 11:53:58,219 DEBUG frappe-bench/env/bin/pip install -q -U -e frappe-bench/apps/frappe 
+2021-02-17 11:57:46,680 DEBUG cd frappe-bench/apps/frappe && yarn install
+2021-02-17 12:01:28,760 DEBUG cd frappe-bench/apps/frappe && yarn install
+2021-02-17 12:01:41,040 DEBUG cd frappe-bench && bench build
+2021-02-17 12:01:41,730 INFO /home/maryam/.local/bin/bench build
+2021-02-17 12:01:52,394 LOG setting up backups
+2021-02-17 12:01:52,417 INFO Bench frappe-bench initialized
+2021-02-17 12:02:39,630 INFO /home/maryam/.local/bin/bench start
+2021-02-17 12:02:42,142 INFO /home/maryam/.local/bin/bench serve --port 8000
+2021-02-17 12:02:42,222 INFO /home/maryam/.local/bin/bench schedule
+2021-02-17 12:02:42,226 INFO /home/maryam/.local/bin/bench watch
+2021-02-17 12:02:42,239 INFO /home/maryam/.local/bin/bench worker --queue long
+2021-02-17 12:02:42,245 INFO /home/maryam/.local/bin/bench worker --queue short
+2021-02-17 12:02:42,288 INFO /home/maryam/.local/bin/bench worker --queue default
+2021-02-17 12:03:33,032 INFO /home/maryam/.local/bin/bench new-app tenant_management
+2021-02-17 12:03:33,034 LOG creating new app tenant_management
+2021-02-17 12:04:09,904 LOG installing tenant_management
+2021-02-17 12:04:09,904 DEBUG ./env/bin/pip install -q -U -e ./apps/tenant_management 
+2021-02-17 12:04:16,421 DEBUG bench build --app tenant_management
+2021-02-17 12:04:17,261 INFO /home/maryam/.local/bin/bench build --app tenant_management
+2021-02-17 12:04:54,359 INFO /home/maryam/.local/bin/bench new-site tenant.test
+2021-02-17 12:05:07,984 INFO /home/maryam/.local/bin/bench new-site tenant.test
+2021-02-17 12:05:13,438 INFO /home/maryam/.local/bin/bench new-site tenant2.test
+2021-02-17 12:11:28,681 INFO /home/maryam/.local/bin/bench new-site tenant2.test
+2021-02-17 12:11:35,190 INFO /home/maryam/.local/bin/bench new-site tenant3.test
+2021-02-17 12:12:49,915 INFO /home/maryam/.local/bin/bench new-site tenant4.test
+2021-02-17 12:14:59,554 INFO /home/maryam/.local/bin/bench new-site tenant5.test
+2021-02-17 12:16:07,257 INFO /home/maryam/.local/bin/bench --site library.test add-to-hosts
+2021-02-17 12:16:22,237 INFO /home/maryam/.local/bin/bench --site tenant5.test add-to-hosts
+2021-02-17 12:17:22,118 INFO /home/maryam/.local/bin/bench start
+2021-02-17 12:17:25,118 INFO /home/maryam/.local/bin/bench watch
+2021-02-17 12:17:25,133 INFO /home/maryam/.local/bin/bench schedule
+2021-02-17 12:17:25,108 INFO /home/maryam/.local/bin/bench worker --queue short
+2021-02-17 12:17:25,181 INFO /home/maryam/.local/bin/bench worker --queue default
+2021-02-17 12:17:25,249 INFO /home/maryam/.local/bin/bench serve --port 8000
+2021-02-17 12:17:25,261 INFO /home/maryam/.local/bin/bench worker --queue long
+2021-02-17 12:21:24,421 INFO /home/maryam/.local/bin/bench --site tenant6.test add-to-hosts
+2021-02-17 12:21:40,275 INFO /home/maryam/.local/bin/bench new-site tenant6.test
+2021-02-17 12:28:06,695 INFO /home/maryam/.local/bin/bench --site tenant5.test mariadb
+2021-02-17 12:28:18,148 INFO /home/maryam/.local/bin/bench --site tenant5.test mariadb
+2021-02-17 12:30:14,839 INFO /home/maryam/.local/bin/bench --site tenant5.test mariadb
+2021-02-17 12:30:25,770 INFO /home/maryam/.local/bin/bench --site tenant5.test mariadb
+2021-02-17 12:38:01,001 INFO /home/maryam/.local/bin/bench --site tenant6.test install-app tenant_management
+2021-02-17 12:38:16,869 INFO /home/maryam/.local/bin/bench --site library.test list-apps
+2021-02-17 12:38:36,557 INFO /home/maryam/.local/bin/bench --site tenant6.test list-apps
+2021-02-17 12:40:02,160 INFO /home/maryam/.local/bin/bench --site tenant6.test set-config --global developer_mode 1
+2021-02-18 06:00:02,511 INFO /home/maryam/.local/bin/bench --verbose --site all backup
+2021-02-19 01:12:29,390 INFO /home/maryam/.local/bin/bench start
+2021-02-19 01:12:31,734 INFO /home/maryam/.local/bin/bench watch
+2021-02-19 01:12:31,889 INFO /home/maryam/.local/bin/bench schedule
+2021-02-19 01:12:31,909 INFO /home/maryam/.local/bin/bench worker --queue short
+2021-02-19 01:12:31,926 INFO /home/maryam/.local/bin/bench serve --port 8000
+2021-02-19 01:12:31,942 INFO /home/maryam/.local/bin/bench worker --queue long
+2021-02-19 01:12:32,057 INFO /home/maryam/.local/bin/bench worker --queue default

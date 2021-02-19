@@ -1,0 +1,334 @@
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+Exception in thread Thread-1:
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 932, in _bootstrap_inner
+    self.run()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 3718, in run
+    self.run()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 3718, in run
+    self.run()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 3718, in run
+12:04:46 Worker rq:worker:441b8ace72a44af18121c2cb63287485.maryam-VirtualBox.3385.long: found an unhandled exception, quitting...
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 572, in work
+    result = self.dequeue_job_and_maintain_ttl(timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 639, in dequeue_job_and_maintain_ttl
+    result = self.queue_class.dequeue_any(self.queues, timeout,
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/queue.py", line 600, in dequeue_any
+    result = cls.lpop(queue_keys, timeout, connection=connection)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/queue.py", line 572, in lpop
+    result = connection.blpop(queue_keys, timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 1900, in blpop
+    return self.execute_command('BLPOP', *keys)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 901, in execute_command
+    return self.parse_response(conn, command_name, **options)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 915, in parse_response
+    response = connection.read_response()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 739, in read_response
+    response = self._parser.read_response()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 324, in read_response
+    raw = self._buffer.readline()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 256, in readline
+    self._read_from_socket()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 201, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 101, in <module>
+    main()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 18, in main
+    click.Group(commands=commands)(prog_name='bench')
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 764, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 717, in main
+    rv = self.invoke(ctx)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 1137, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 1137, in invoke
+12:04:46 Worker rq:worker:fa851220f594420595f004c45f7e965f.maryam-VirtualBox.3390.default: found an unhandled exception, quitting...
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 572, in work
+    result = self.dequeue_job_and_maintain_ttl(timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 639, in dequeue_job_and_maintain_ttl
+    result = self.queue_class.dequeue_any(self.queues, timeout,
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/queue.py", line 600, in dequeue_any
+    result = cls.lpop(queue_keys, timeout, connection=connection)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/queue.py", line 572, in lpop
+    result = connection.blpop(queue_keys, timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 1900, in blpop
+    return self.execute_command('BLPOP', *keys)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 901, in execute_command
+    return self.parse_response(conn, command_name, **options)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 915, in parse_response
+    response = connection.read_response()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 739, in read_response
+    response = self._parser.read_response()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 324, in read_response
+    raw = self._buffer.readline()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 256, in readline
+    self._read_from_socket()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 201, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 101, in <module>
+    main()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 18, in main
+    click.Group(commands=commands)(prog_name='bench')
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 764, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 717, in main
+    rv = self.invoke(ctx)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 1137, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 1137, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 956, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 555, in invoke
+    return callback(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 167, in start_worker
+    start_worker(queue, quiet = quiet)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 151, in start_worker
+    Worker(queues, name=get_worker_name(queue)).work(logging_level = logging_level)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 610, in work
+    self.register_death()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 318, in register_death
+    p.execute()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 4012, in execute
+    conn = self.connection_pool.get_connection('MULTI',
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:11000. Connection refused.
+12:04:46 Worker rq:worker:aa041161f05f4f36ba392757cd155845.maryam-VirtualBox.3388.short: found an unhandled exception, quitting...
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 572, in work
+    result = self.dequeue_job_and_maintain_ttl(timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 639, in dequeue_job_and_maintain_ttl
+    result = self.queue_class.dequeue_any(self.queues, timeout,
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/queue.py", line 600, in dequeue_any
+    result = cls.lpop(queue_keys, timeout, connection=connection)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/queue.py", line 572, in lpop
+    result = connection.blpop(queue_keys, timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 1900, in blpop
+    return self.execute_command('BLPOP', *keys)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 901, in execute_command
+    return self.parse_response(conn, command_name, **options)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 915, in parse_response
+    response = connection.read_response()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 739, in read_response
+    response = self._parser.read_response()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 324, in read_response
+    raw = self._buffer.readline()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 256, in readline
+    self._read_from_socket()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 201, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 559, in connect
+    sock = self._connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 615, in _connect
+    raise err
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 603, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 111] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/runpy.py", line 194, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+    exec(code, run_globals)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 101, in <module>
+    main()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/bench_helper.py", line 18, in main
+    click.Group(commands=commands)(prog_name='bench')
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 764, in __call__
+    return self.main(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 717, in main
+    rv = self.invoke(ctx)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 1137, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 1137, in invoke
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 956, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 555, in invoke
+    return callback(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 167, in start_worker
+    start_worker(queue, quiet = quiet)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 151, in start_worker
+    Worker(queues, name=get_worker_name(queue)).work(logging_level = logging_level)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 610, in work
+    self.register_death()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 318, in register_death
+    p.execute()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 4012, in execute
+    conn = self.connection_pool.get_connection('MULTI',
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+    connection.connect()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:11000. Connection refused.
+    return _process_result(sub_ctx.command.invoke(sub_ctx))
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 956, in invoke
+    return ctx.invoke(self.callback, **ctx.params)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/click/core.py", line 555, in invoke
+    return callback(*args, **kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/commands/scheduler.py", line 167, in start_worker
+    start_worker(queue, quiet = quiet)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 151, in start_worker
+    Worker(queues, name=get_worker_name(queue)).work(logging_level = logging_level)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 610, in work
+    self.register_death()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 318, in register_death
+    p.execute()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 4012, in execute
+    conn = self.connection_pool.get_connection('MULTI',
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 1192, in get_connection
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 563, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 111 connecting to localhost:11000. Connection refused.
+    pubsub.get_message(ignore_subscribe_messages=True,
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 3617, in get_message
+    response = self.parse_response(block=False, timeout=timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 3503, in parse_response
+    if not block and not conn.can_read(timeout=timeout):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 734, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 321, in can_read
+    return self._buffer and self._buffer.can_read(timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 230, in can_read
+    self._read_from_socket(timeout=timeout,
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 201, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+    pubsub.get_message(ignore_subscribe_messages=True,
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 3617, in get_message
+    pubsub.get_message(ignore_subscribe_messages=True,
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 3617, in get_message
+    response = self.parse_response(block=False, timeout=timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 3503, in parse_response
+    if not block and not conn.can_read(timeout=timeout):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 734, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 321, in can_read
+    return self._buffer and self._buffer.can_read(timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 230, in can_read
+    self._read_from_socket(timeout=timeout,
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 201, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+    response = self.parse_response(block=False, timeout=timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/client.py", line 3503, in parse_response
+    if not block and not conn.can_read(timeout=timeout):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 734, in can_read
+    return self._parser.can_read(timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 321, in can_read
+    return self._buffer and self._buffer.can_read(timeout)
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 230, in can_read
+    self._read_from_socket(timeout=timeout,
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/redis/connection.py", line 201, in _read_from_socket
+    raise ConnectionError(SERVER_CLOSED_CONNECTION_ERROR)
+redis.exceptions.ConnectionError: Connection closed by server.
+Exception ignored in: <module 'threading' from '/usr/lib/python3.8/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 1388, in _shutdown
+    Exception ignored in: <module 'threading' from '/usr/lib/python3.8/threading.py'>
+Traceback (most recent call last):
+  File "/usr/lib/python3.8/threading.py", line 1388, in _shutdown
+    lock.acquire()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 448, in request_stop
+    self._shutdown()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 465, in _shutdown
+    raise StopRequested()
+rq.worker.StopRequested: 
+lock.acquire()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 448, in request_stop
+    self._shutdown()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 465, in _shutdown
+    raise StopRequested()
+rq.worker.StopRequested: 
+12:36:50 Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 975, in perform_job
+    rv = job.perform()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/job.py", line 696, in perform
+    self._result = self._execute()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/job.py", line 719, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 100, in execute_job
+    method(**kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 1097, in create_contact
+    contact.insert(ignore_permissions=True, ignore_links=ignore_links, ignore_mandatory=ignore_mandatory)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py", line 232, in insert
+    self._validate_links()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py", line 816, in _validate_links
+    frappe.throw(_("Could not find {0}").format(msg),
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 416, in throw
+    msgprint(msg, raise_exception=exc, title=title, indicator='red', is_minimizable=is_minimizable, wide=wide, as_list=as_list)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 395, in msgprint
+    _raise_exception()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 349, in _raise_exception
+    raise raise_exception(msg)
+frappe.exceptions.LinkValidationError: Could not find User Id: m@g.com
+Traceback (most recent call last):
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/worker.py", line 975, in perform_job
+    rv = job.perform()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/job.py", line 696, in perform
+    self._result = self._execute()
+  File "/home/maryam/Documents/frappe-bench/env/lib/python3.8/site-packages/rq/job.py", line 719, in _execute
+    return self.func(*self.args, **self.kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/utils/background_jobs.py", line 100, in execute_job
+    method(**kwargs)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/core/doctype/user/user.py", line 1097, in create_contact
+    contact.insert(ignore_permissions=True, ignore_links=ignore_links, ignore_mandatory=ignore_mandatory)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py", line 232, in insert
+    self._validate_links()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/model/document.py", line 816, in _validate_links
+    frappe.throw(_("Could not find {0}").format(msg),
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 416, in throw
+    msgprint(msg, raise_exception=exc, title=title, indicator='red', is_minimizable=is_minimizable, wide=wide, as_list=as_list)
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 395, in msgprint
+    _raise_exception()
+  File "/home/maryam/Documents/frappe-bench/apps/frappe/frappe/__init__.py", line 349, in _raise_exception
+    raise raise_exception(msg)
+frappe.exceptions.LinkValidationError: Could not find User Id: m@g.com

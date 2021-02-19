@@ -1,0 +1,9 @@
+2021-02-17 12:18:20,833 ERROR frappe New Exception collected with id: 2021-02-17 12:18:20.663709-127.0.0.1-85a
+Site: tenant5.test
+Form Dict: {'cmd': 'frappe.core.doctype.user.user.sign_up', 'email': 'M@g.com', 'redirect_to': '', 'full_name': 'Maryam'}
+2021-02-17 12:19:18,696 ERROR frappe New Exception collected with id: 2021-02-17 12:19:18.685013-127.0.0.1-64e
+Site: tenant5.test
+Form Dict: {'cmd': 'frappe.core.doctype.user.user.sign_up', 'email': 'm@gmail.com', 'redirect_to': '', 'full_name': 'Maryam'}
+2021-02-17 12:33:13,779 ERROR frappe New Exception collected with id: 2021-02-17 12:33:13.773043-127.0.0.1-0ed
+Site: tenant6.test
+Form Dict: {'cmd': 'frappe.core.doctype.user.user.sign_up', 'email': 'maryam.m.yusuf1802@gmail.com', 'redirect_to': '', 'full_name': 'm'}
